@@ -1,47 +1,52 @@
-<!-- index.html (GitHub Pages) -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Reindirizzamento WhatsApp…</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apertura WhatsApp...</title>
 
-    <!-- Redirect fallback (alcuni browser lo rispettano, altri no) -->
-    <meta
-      http-equiv="refresh"
-      content="0; url=https://wa.me/393514244519?text=Ciao%2C%20aggiungimi%20alla%20lista%20WhatsApp%20VIP%20per%20offerte%20e%20eventi.%20(So%20che%20devo%20salvare%20il%20numero%20per%20riceverli%20e%20accetto%20le%20comunicazioni%20marketing.)"
-    />
+  <script>
+    function openWhatsApp() {
+      var url = "https://wa.me/393514244519?text=" + encodeURIComponent(
+        "Ciao, aggiungimi alla lista WhatsApp VIP per offerte speciali ed eventi. (Sono consapevole di dover salvare il vostro numero per ricevere i messaggi e accetto le comunicazioni marketing.)"
+      );
 
-    <script>
-      // Redirect "quasi immediato" (100ms)
-      const waUrl =
-        "https://wa.me/393514244519?text=" +
-        encodeURIComponent(
-          "Ciao, aggiungimi alla lista WhatsApp VIP per offerte speciali e eventi. (So che devo salvare il vostro numero per riceverli e accetto le comunicazioni marketing.)"
-        );
+      window.location.href = url;
+    }
 
-      // Prova subito e poi riprova dopo 100ms (alcuni browser sono più “lenti” ad aprire app)
-      window.location.replace(waUrl);
-      setTimeout(() => window.location.replace(waUrl), 100);
-    </script>
+    // apertura automatica dopo 0.2 sec (compatibile GitHub + iPhone)
+    setTimeout(openWhatsApp, 200);
+  </script>
 
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 24px; }
-      .box { max-width: 640px; margin: 0 auto; }
-      a { word-break: break-all; }
-    </style>
-  </head>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#0f0f0f;
+      color:white;
+      text-align:center;
+      padding-top:80px;
+    }
+    .btn{
+      background:#25D366;
+      color:white;
+      padding:18px 28px;
+      border-radius:12px;
+      text-decoration:none;
+      font-size:20px;
+      display:inline-block;
+      margin-top:25px;
+    }
+  </style>
+</head>
 
-  <body>
-    <div class="box">
-      <h1>Ti sto aprendo WhatsApp…</h1>
-      <p>Se non si apre automaticamente, clicca qui:</p>
-      <p>
-        <a
-          href="https://wa.me/393514244519?text=Ciao%2C%20aggiungimi%20alla%20lista%20WhatsApp%20VIP%20per%20offerte%20e%20eventi.%20(So%20che%20devo%20salvare%20il%20numero%20per%20riceverli%20e%20accetto%20le%20comunicazioni%20marketing.)"
-          >Apri WhatsApp</a
-        >
-      </p>
-    </div>
-  </body>
+<body>
+
+<h2>Ti stiamo collegando su WhatsApp…</h2>
+<p>Se non si apre automaticamente clicca qui:</p>
+
+<a class="btn" href="https://wa.me/393514244519?text=Ciao%2C%20aggiungimi%20alla%20lista%20WhatsApp%20VIP%20per%20offerte%20speciali%20ed%20eventi.%20(Sono%20consapevole%20di%20dover%20salvare%20il%20vostro%20numero%20per%20ricevere%20i%20messaggi%20e%20accetto%20le%20comunicazioni%20marketing.)">
+Apri WhatsApp
+</a>
+
+</body>
 </html>
